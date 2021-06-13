@@ -2,33 +2,24 @@
   <div class="container">
     <div>
       <Logo />
-      <h1 class="title">
-        app
-      </h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
+      <no-ssr>
+        <v-select v-model="selected"     
+            placeholder="Select a Category"
+            :options="['foo', 'bar']">
+      </v-select>
+      </no-ssr>
     </div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  data(){
+    return{
+      selected: 'foo'
+    }
+  }
+}
 </script>
 
 <style>
